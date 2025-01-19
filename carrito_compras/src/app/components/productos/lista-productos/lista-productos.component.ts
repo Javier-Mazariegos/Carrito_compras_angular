@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ProductoService } from '../../../services/producto.service';
 import { Producto } from '../../../models/producto';
+import { CarritoService } from '../../../services/carrito.service';
 
 @Component({
   selector: 'app-lista-productos',
@@ -10,6 +11,7 @@ import { Producto } from '../../../models/producto';
 })
 export class ListaProductosComponent implements OnInit{
   private productoService = inject(ProductoService);
+  private carritoService = inject(CarritoService);
   productos: Producto[] = [];
 
   ngOnInit(): void {
@@ -25,5 +27,9 @@ export class ListaProductosComponent implements OnInit{
         console.error(e);
       }
     })
+  }
+
+  addProducto(item: Producto){
+    this.carritoService.addProducto(item);
   }
 }

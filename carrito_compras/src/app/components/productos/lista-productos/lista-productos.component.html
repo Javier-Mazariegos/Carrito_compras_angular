@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <p class="fw-bold">{{item.title}}</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <button type="button" class="btn btn-sm btn-dark">
+                            <button (click) = "addProducto(item)" type="button" class="btn btn-sm btn-dark">
                                 <i class="fa fa-shopping-cart"></i> Agregar
                             </button>
                             <small class="fw-bold">Q {{item.price}}</small>

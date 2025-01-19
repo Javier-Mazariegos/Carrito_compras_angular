@@ -1,0 +1,14 @@
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { CarritoService } from '../../services/carrito.service';
+
+@Component({
+  selector: 'app-header',
+  imports: [CommonModule, RouterLink],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css'
+})
+export class HeaderComponent {
+  public carritoService = inject(CarritoService);
+}
