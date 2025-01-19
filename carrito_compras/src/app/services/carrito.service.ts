@@ -58,7 +58,7 @@ export class CarritoService {
 
   getSession(){
     this.listCarrito = []
-    if(typeof window != undefined && window.localStorage){
+    if(typeof window != 'undefined' && window.localStorage){
       const carrito = localStorage.getItem('carrito');
       if(carrito != null){
         this.listCarrito = JSON.parse(carrito);

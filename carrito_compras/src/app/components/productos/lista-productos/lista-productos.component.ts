@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ProductoService } from '../../../services/producto.service';
 import { Producto } from '../../../models/producto';
 import { CarritoService } from '../../../services/carrito.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-lista-productos',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './lista-productos.component.html',
   styleUrl: './lista-productos.component.css'
 })

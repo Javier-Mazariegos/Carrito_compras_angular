@@ -8,9 +8,18 @@ import { Producto } from '../models/producto';
 export class ProductoService {
 
   private http = inject(HttpClient);
-  private url: string = 'https://fakestoreapi.com/products?limit=5'
+  private url: string = 'https://fakestoreapi.com'
 
   getProductos(){
-    return this.http.get<Producto[]>(this.url);
+    return this.http.get<Producto[]>(`${this.url}/products`);
   }
+
+  getlimitProductos(){
+    return this.http.get<Producto[]>(`${this.url}/products?limit=4`);
+  }
+
+  getProducto(id: string){
+    return this.http.get<Producto>(`${this.url}/products/${id}`);
+  }
+
 }

@@ -3,10 +3,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CarritoService } from '../../../services/carrito.service';
 import { Carrito } from '../../../models/carrito';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-resumen',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './resumen.component.html',
   styleUrl: './resumen.component.css'
 })

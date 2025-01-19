@@ -1,4 +1,62 @@
 img{
     width: 100%;
     height: 240px;
+    object-fit:contain;
+}
+
+
+.product-card {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    transition: all 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #6366f1;
+}
+
+.btn-custom {
+    background: linear-gradient(45deg, #6366f1, #8b5cf6);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+.limited-lines {
+    display: -webkit-box; /* Requerido para limitar líneas */
+    -webkit-line-clamp: 2; /* Cambia el número de líneas según necesites */
+    -webkit-box-orient: vertical; /* Requerido para limitar líneas */
+    overflow: hidden; /* Oculta el texto extra */
+    text-overflow: ellipsis; /* Muestra "..." para indicar texto truncado */
+}
+
+.truncate-one-line {
+white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+overflow: hidden; /* Oculta cualquier texto que desborde el contenedor */
+text-overflow: ellipsis; /* Muestra "..." para el texto truncado */
 }

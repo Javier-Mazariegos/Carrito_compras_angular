@@ -1,0 +1,136 @@
+<div class="container">
+    <div class="row">
+        <div class="col py-5 text-center">
+            <h2>Formulario de Pago</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Formulario -->
+        <div class="col-12 col-md-8 order-2 order-md-1">
+            <h4 class="mb-3">Direccion de envio</h4>
+            <form action="">
+                <!-- Nombre y apellido -->
+                <div class="row">
+                    <div class="col-12 col-sm-6 mb-3">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+
+                    <div class="col-12 col-sm-6 mb-3">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido">
+                    </div>
+                </div>
+
+                <!-- Correo -->
+                <div class="mb-3">
+                    <label for="correo">Correo <span class="text-muted">(Opcional)</span></label>
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="nombre@correo.com">
+                </div>
+
+                <!-- Direccion -->
+                <div class="mb-3">
+                    <label for="direccion">Direccion</label>
+                    <input type="text" class="form-control" placeholder="Calle 1234" name="direccion" id="direccion">
+                </div>
+
+
+                <!-- Pais, Estado, Codifo Postal -->
+                <div class="row">
+                    <!-- Pais -->
+                    <div class="col-12 col-sm-4 mb-3">
+                        <label for="pais">Pais</label>
+                        <select class="form-control" name="pais" id="pais">
+                            <option value="">Seleccionar Pais</option>
+                            <option value="argentina">Guatemala</option>
+                        </select>
+                    </div>
+                    <!-- Estado -->
+                    <div class="col-12 col-sm-4 mb-3">
+                        <label for="pais">Estado</label>
+                        <select class="form-control" name="pais" id="pais">
+                            <option value="">Seleccionar Estado</option>
+                            <option value="caba">Ciudad de guatemala</option>
+                        </select>
+                    </div>
+                    <!-- Codigo Postal -->
+                    <div class="col-12 col-sm-4 mb-3">
+                        <label for="codigo-postal">Codigo Postal</label>
+                        <input class="form-control" type="text" id="codigo-postal">
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+
+                <!-- Forma de pago -->
+                <div class="d-block mb-3">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" name="metodo-pago" id="tarjeta-credito" class="custom-control-input" checked>
+                        <label class="custom-control-label" for="tarjeta-credito">Tarjeta de Credito</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-sm-6 mb-3">
+                        <label for="tarjeta">Nombre en la tarjeta</label>
+                        <input type="text" id="tarjeta" class="form-control">
+                        <small class="text-muted">Nombre completo como se ve en la tarjeta</small>
+                    </div>
+
+                    <div class="col-12 col-sm-6 mb-3">
+                        <label for="numero-tarjeta">Numero de tarjeta</label>
+                        <input type="text" id="numero-tarjeta" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-sm-4 mb-3">
+                        <label for="tarjeta-expiracion">Expiracion</label>
+                        <input type="text" id="tarjeta-expiracion" class="form-control">
+                    </div>
+
+                    <div class="col-6 col-sm-4 mb-3">
+                        <label for="tarjeta-cvv">CVV</label>
+                        <input type="text" id="tarjeta-cvv" class="form-control">
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+
+                <input type="button" value="Pagar" [routerLink]="['/confirmacion']" class="btn btn-block btn-lg btn-primary">
+
+
+            </form>
+        </div>
+
+        <!-- Carrito -->
+        <div class="col-12 col-md-4 order-1 order-md-2">
+            <h4 class="mb-3 d-flex justify-content-between align-items-center">
+                <span class="text-muted">Tu Carrito</span>
+                <span class="badge - badge-secondary badge-pill">3</span>
+            </h4>
+
+            <ul class="list-group mb-3">
+
+                @for(item of listCarrito; track item.producto){
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6 class="my-0">{{item.producto.title}}</h6>
+                            <small class="text-muted">Cantidad: {{item.cantidad}}</small>
+                        </div>
+                        <span class="text-muted">${{item.producto.price}}</span>
+                    </li>
+                    
+                }
+                <li class="list-group-item d-flex justify-content-between bg-light">
+                    <span class="text-muted">Total (USD)</span>
+                    <strong>$ {{carritoService.getTotal() | number: '1.2-2'}}</strong>
+                </li>
+
+                
+            </ul>
+        </div>
+    </div>
+
+</div>
