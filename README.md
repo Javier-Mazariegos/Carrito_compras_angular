@@ -28,7 +28,7 @@ Antes de comenzar, tener instalados los siguientes componentes:
 Clonar el repositorio en la máquina local usando Git:
 
 ```bash
-git clone (https://github.com/Javier-Mazariegos/Carrito_compras_angular)
+git clone https://github.com/Javier-Mazariegos/Carrito_compras_angular
 ```
 
 Cambiar al directorio del proyecto:
