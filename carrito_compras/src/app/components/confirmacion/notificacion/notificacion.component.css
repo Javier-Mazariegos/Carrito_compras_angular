@@ -1,3 +1,13 @@
 img{
     max-height: 200px;
 }
+
+.btn{
+    border-color: #7535F6 ;
+    color: #7535F6;
+}
+
+.btn:hover{
+    background-color: #7535F6 ;
+    color: white;
+}

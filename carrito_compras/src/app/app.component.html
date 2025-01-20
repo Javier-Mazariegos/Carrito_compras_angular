@@ -1,2 +1,7 @@
-<app-header></app-header>
+@if(mostrarHeader){
+    <app-header></app-header>
+}
+
 <router-outlet />
+<ngx-sonner-toaster ngSkipHydration></ngx-sonner-toaster>
+<ngx-spinner ngSkipHydration></ngx-spinner>

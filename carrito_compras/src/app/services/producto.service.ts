@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Producto } from '../models/producto';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Producto } from '../models/producto';
 export class ProductoService {
 
   private http = inject(HttpClient);
-  private url: string = 'https://fakestoreapi.com'
+  private url: string = environment.API_URL;
 
   getProductos(){
     return this.http.get<Producto[]>(`${this.url}/products`);

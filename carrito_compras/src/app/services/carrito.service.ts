@@ -42,7 +42,8 @@ export class CarritoService {
 
   getCantidad(){
     this.getSession();
-    return this.listCarrito.length;
+    
+    return this.listCarrito.reduce((total, item) => total + item.cantidad, 0);
   }
 
   getTotal(){
@@ -50,6 +51,11 @@ export class CarritoService {
       sum += item.producto.price * item.cantidad, 0
     );
     return total;
+  }
+
+  clearCarrito() {
+    this.listCarrito = []; 
+    localStorage.removeItem('carrito'); 
   }
 
   saveSession(){

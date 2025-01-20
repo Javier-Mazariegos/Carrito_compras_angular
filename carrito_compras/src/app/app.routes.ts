@@ -4,12 +4,16 @@ import { ResumenComponent } from './components/carrito/resumen/resumen.component
 import { DetalleComponent } from './components/detalle-producto/detalle/detalle.component';
 import { PagoComponent } from './components/proceso-pago/pago/pago.component';
 import { NotificacionComponent } from './components/confirmacion/notificacion/notificacion.component';
+import { LoginComponent } from './components/autenticacion/login/login.component';
+import { authGuard } from './guards/auth.guard';
+import { authenticatedGuard } from './guards/authenticated.guard';
 
 export const routes: Routes = [
-    {path: '', component: ListaProductosComponent},
-    {path: 'carrito', component: ResumenComponent},
-    {path: 'detalle-producto/:id', component: DetalleComponent},
-    {path: 'proceso-pago', component: PagoComponent},
-    {path: 'confirmacion', component: NotificacionComponent},
-    {path: '**', pathMatch: 'full' , redirectTo: ''} //Si el usuario ingresa una ruta incorrecta, se redirige al componente principal
+    {path: '', component: ListaProductosComponent, canActivate: [authGuard]},
+    {path: 'carrito', component: ResumenComponent, canActivate: [authGuard]},
+    {path: 'detalle-producto/:id', component: DetalleComponent, canActivate: [authGuard]},
+    {path: 'proceso-pago', component: PagoComponent, canActivate: [authGuard]},
+    {path: 'confirmacion', component: NotificacionComponent,canActivate: [authGuard]},
+    {path: 'login', component: LoginComponent, canActivate: [authenticatedGuard]},
+    {path: '**', pathMatch: 'full' , redirectTo: ''} 
 ];

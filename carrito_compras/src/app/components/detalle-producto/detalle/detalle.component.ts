@@ -4,6 +4,7 @@ import { Producto } from '../../../models/producto';
 import { CarritoService } from '../../../services/carrito.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { toast } from 'ngx-sonner';
 
 @Component({
   selector: 'app-detalle',
@@ -53,8 +54,9 @@ export class DetalleComponent implements OnInit {
   addCarrito() {
     if (this.cantidad > 0) {
       this.carritoService.addProducto(this.producto, this.cantidad);
+      toast.success('Producto agregado'); 
     } else {
-      console.warn('La cantidad debe ser mayor a 0.');
+      toast.error('La cantidad debe ser mayor a 0'); 
     }
   }
 

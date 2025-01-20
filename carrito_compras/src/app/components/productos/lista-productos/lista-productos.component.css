@@ -48,15 +48,15 @@ img{
 }
 
 .limited-lines {
-    display: -webkit-box; /* Requerido para limitar líneas */
-    -webkit-line-clamp: 2; /* Cambia el número de líneas según necesites */
-    -webkit-box-orient: vertical; /* Requerido para limitar líneas */
-    overflow: hidden; /* Oculta el texto extra */
-    text-overflow: ellipsis; /* Muestra "..." para indicar texto truncado */
+    display: -webkit-box; 
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+    text-overflow: ellipsis;
 }
 
 .truncate-one-line {
-white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-overflow: hidden; /* Oculta cualquier texto que desborde el contenedor */
-text-overflow: ellipsis; /* Muestra "..." para el texto truncado */
+white-space: nowrap; 
+overflow: hidden;
+text-overflow: ellipsis; 
 }

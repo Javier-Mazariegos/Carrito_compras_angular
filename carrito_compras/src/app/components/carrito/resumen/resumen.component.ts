@@ -22,7 +22,6 @@ export class ResumenComponent implements OnInit {
 
   getListCarrito(){
     this.listCarrito = this.carritoService.getCarrito();
-    console.log(this.listCarrito)
   }
 
   deleteProduct(index: number){
@@ -42,9 +41,9 @@ export class ResumenComponent implements OnInit {
     const item = this.listCarrito[index];
     let newQuantity = item.cantidad + change;
 
-    if (newQuantity >= 1) { // Verifica que la cantidad mínima sea 1
+    if (newQuantity >= 1) { 
         item.cantidad = newQuantity;
-        this.carritoService.updateCarrito(index, newQuantity); // Actualiza el carrito en el servicio
+        this.carritoService.updateCarrito(index, newQuantity); 
     }
 }
 
