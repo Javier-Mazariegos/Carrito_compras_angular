@@ -38,4 +38,14 @@ export class ResumenComponent implements OnInit {
     this.carritoService.updateCarrito(index, item.cantidad);
   }
 
+  updateQuantity(index: number, change: number): void {
+    const item = this.listCarrito[index];
+    let newQuantity = item.cantidad + change;
+
+    if (newQuantity >= 1) { // Verifica que la cantidad mínima sea 1
+        item.cantidad = newQuantity;
+        this.carritoService.updateCarrito(index, newQuantity); // Actualiza el carrito en el servicio
+    }
+}
+
 }
