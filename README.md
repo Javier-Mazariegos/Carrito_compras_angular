@@ -34,7 +34,7 @@ git clone https://github.com/Javier-Mazariegos/Carrito_compras_angular
 Cambiar al directorio del proyecto:
 
 ```bash
-cd carrito_compras
+cd Carrito_compras_angular/carrito_compras
 ```
 
 ### 2. Instalar dependencias
