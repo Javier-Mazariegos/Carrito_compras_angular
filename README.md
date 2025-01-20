@@ -65,8 +65,8 @@ Por defecto, la aplicación estará disponible en [http://localhost:4200](http:/
 
 ## Credenciales para ingresar en el login
 
-Usuario: mor_2314
-Contraseña: 83r5^_
+* Usuario: mor_2314
+* Contraseña: 83r5^_
 
 ---
 
