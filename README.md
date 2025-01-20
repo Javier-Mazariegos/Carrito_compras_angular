@@ -63,6 +63,13 @@ Por defecto, la aplicación estará disponible en [http://localhost:4200](http:/
 
 ---
 
+## Credenciales para ingresar en el login
+
+Usuario: mor_2314
+Contraseña: 83r5^_
+
+---
+
 ## Estructura del proyecto
 
 La estructura principal del proyecto es la siguiente:
